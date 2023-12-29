@@ -20,6 +20,7 @@ class QuestionAdmin(admin.ModelAdmin):
 
 class ChoicesAdmin(admin.ModelAdmin):
     search_fields = ('title',)
+    list_filter = ('quiz',)
 
 
 admin.site.register(models.Quiz, QuizAdmin)
