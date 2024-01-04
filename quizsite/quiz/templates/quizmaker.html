@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QuizMaker</title>
+</head>
+<body>
+{% if user.is_authenticated %}
+    <form method="post">
+    {% csrf_token %}
+        <table>
+            {{ form }}
+        </table>
+        <button type="submit" >Submit</button>
+    </form>
+{% else %}
+    <h1> Nice Try </h1>
+{% endif %}
+</body>
+</html>
