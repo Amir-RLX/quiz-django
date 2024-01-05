@@ -51,11 +51,11 @@ class Question(models.Model):
 
 
 class Choices(models.Model):
-    title = models.TextField(editable=True)
+    title = models.TextField(editable=True, null=True, blank=True)
     quiz = models.ForeignKey('Quiz', on_delete=models.PROTECT)
     question = models.ForeignKey('Question', on_delete=models.PROTECT)
     result = models.ForeignKey('Result', on_delete=models.PROTECT)
-    select = models.BooleanField(blank=True)
+    select = models.BooleanField(blank=True, default=False)
 
     def __str__(self):
         return self.title
